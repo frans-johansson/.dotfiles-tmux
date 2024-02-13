@@ -1,0 +1,15 @@
+SESSION="#[fg=$PRIMARY]#[bg=$PRIMARY, fg=$TEXT] \uebc8 #S #[fg=$PRIMARY, bg=$TEXT]"
+CLOCK="#[fg=$SECONDARY]#[bg=$SECONDARY, fg=$TEXT] \uf017 %H:%M #[fg=$SECONDARY, bg=$TEXT]"
+DATE="#[bg=$BG, fg=$SECONDARY] \uf455 %Y-%m-%d #[fg=$TEXT, bg=$BG]"
+ZOOM_ICON="\uf002"
+UNZOOMED_ICON="\uf069"
+
+set -g status-bg $BG
+set -g status-left "$SESSION"
+set -g status-left-length 30
+set -g status-right "$DATE $CLOCK"
+
+set -g window-status-style "fg=$FG"
+set -g window-status-current-style "fg=$PRIMARY"
+set -g window-status-format " #I: #W"
+set -g window-status-current-format " #{?window_zoomed_flag,$ZOOM_ICON,$UNZOOMED_ICON} #W"
